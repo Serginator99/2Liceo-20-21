@@ -7,7 +7,11 @@ function piso(nPiso, altura){
     }
     for (i = 0; i< nNumerales; i++){
         texto= texto + "#";
-    }   
+    }
+    texto= texto + "&nbsp";
+    for (i = 0; i< nNumerales; i++){
+        texto= texto + "#";
+    }
     texto= texto + "</p>"                        
     return texto;
 }
