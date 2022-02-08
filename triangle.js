@@ -8,9 +8,18 @@ function piso(nPiso, altura){
     for (i = 0; i< nNumerales; i++){
         texto= texto + "#";
     }
-    for (i = 0; i< nNumerales; i++){
-        
+    if(nPiso == 1){
+        texto= texto + "#";
+        texto= texto + "</p>"
+        return texto
+    }if(1< nPiso && nPiso< 10){
+        texto= texto + "#" + "&nbsp;"+ "#";
+        texto= texto + "</p>"
+        return texto
+    }if (nPiso == 10){
+        texto= texto + "#";
     }
+
     texto= texto + "&nbsp";
     for (i = 0; i< nNumerales; i++){
         texto= texto + "#";
