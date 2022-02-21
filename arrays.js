@@ -3,12 +3,17 @@ edades=[]
 for (let i=0; i< 17; i= i+1){
     do
     {
-        (edad= Number(prompt("Ingrese la edad de " + nombres[i]}))
+        (edad= Number(prompt(`Ingrese la edad de ${nombres[i]}`))
     }
-    while(isNaN (edad) || edad<20 || edad>10)
+    while(isNaN (edad) || edad<20 || edad>10);
+    edades.push(edad)
 }
-suma= suma+edad[i]
+for ( let i= 0; i<17; i++){
+     suma= suma+edades[i];
+}
 promedio= suma/17
 let contenido= document.querySelector("#informacion")
 informacion.innerHTML= "el Promedio de las notas "+ promedio
+
+
 
