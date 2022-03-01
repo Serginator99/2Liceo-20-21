@@ -5,27 +5,28 @@ function piso(nPiso, altura){
     for (i = 0; i< nEspacios; i++){
         texto = texto + "&nbsp;";
     }
-    for (i = 0; i< nNumerales; i++){
-        texto= texto + "#";
+
+    if (nPiso == altura){
+        for (i = 0; i< nNumerales; i++){
+                texto= texto + "#";
+        }
+        texto= texto + "</p>"
+        return texto
     }
     if(nPiso == 1){
         texto= texto + "#";
         texto= texto + "</p>"
         return texto
-    }if(1< nPiso && nPiso< 10){
-        texto= texto + "#" + "&nbsp;"+ "#";
+    }
+    if(1< nPiso && nPiso< altura){
+        texto= texto + "#";
+        for (i = 0; i< 2*nPiso-3; i++){
+            texto = texto + "&nbsp;";
+        }
+        texto= texto + "#";
         texto= texto + "</p>"
         return texto
-    }if (nPiso == 10){
-        texto= texto + "#";
     }
-
-    texto= texto + "&nbsp";
-    for (i = 0; i< nNumerales; i++){
-        texto= texto + "#";
-    }
-    texto= texto + "</p>"                        
-    return texto;
 }
 let nPisos;
 do{
