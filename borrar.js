@@ -52,7 +52,5 @@ canvas.addEventListener("click",function(e){
         ctx.fill()
         ctx.fillStyle="red"
     }
-        
-
     }
 )
