@@ -41,7 +41,7 @@ let Gushtavito = new Personaje(300,150,0,75)
 Gushtavito.dibujarse();
 let Ficondon = new Personaje (200,100,45,25)
 Ficondon.dibujarse();
-let Rodolfito = new Personaje (400,200,110,50)
+let Rodolfito = new Personaje (400,200,315,50)
 Rodolfito.dibujarse();
-let Carletto = new Personaje (700,50,225,100)
+let Carletto = new Personaje (700,50,180,100)
 Carletto.dibujarse();
