@@ -1,36 +1,54 @@
-let N= Number(prompt("Ingrese el número deseado de discos"))
-let origen= Number(prompt("Ingrese la plataforma incial(1,2 o 3)"))
-let destino= Number(prompt("Indique la plataforma a la que quiere desplazar la torre"))
-let platformaIntermedia= 0 
-function hanoi (N,origen,destino)
-{
-    if(N==1){
-        return(`${origen}--> ${destino}`)
-    }else
+let resultado=""
+let n
+let origen
+let destino
+do {
+    n=Number(prompt("¿Cuantos discos?"))    
+} while (n>10|| n<1||isNaN(n));
+do {
+    origen=Number(prompt("¿Cual es el orgien de los discos? (1, 2 o 3)"))    
+} while (origen!=1 && origen!=2 && origen!=3 || isNaN(origen));
+do {
+    destino=Number(prompt("¿Cual es el destino de los discos? (1, 2 o 3)"))    
+} while (destino!=1 && destino!=2 && destino!=3 || isNaN(destino));
 
-
-    if(origen== 1 && destino== 3)
-    platformaIntermedia=2
-
-    if(origen== 2 && destino== 3)
-    platformaIntermedia=1
-
-    if(origen== 1 && destino== 2)
-    platformaIntermedia=3
-
-    if(origen== 2 && destino== 1)
-    platformaIntermedia=3
-
-    if(origen== 3 && destino== 1)
-    platformaIntermedia=2
-
-    if(origen== 3 && destino== 2)
-    platformaIntermedia=1
-
-    return hanoi(N-1,origen,destino)
+function hanoi(n,origen, destino){
+    if(n==1){
+        resultado=resultado + origen + " -> " + destino + "&nbsp;"+ "&nbsp;"
+    }else{
+    if(origen==1 && destino==2){
+        nuevo_final=3
+    }
+    if (origen==1&&destino==3) {
+        nuevo_final=2
+    }
+    if (origen==2&&destino==3) {
+        nuevo_final=1
+    }
+    if (origen==2&&destino==1) {
+        nuevo_final=3
+    }
+    if (origen==3&&destino==2) {
+        nuevo_final=1
+    }
+    if (origen==3&&destino==1) {
+        nuevo_final=2
+    }
+    hanoi(n-1,origen,nuevo_final)
+        resultado= resultado + origen + " -> " + destino + "&nbsp;"+ "&nbsp;"
+        nuevo_origen = nuevo_final
+        nuevo_final=destino
+        hanoi(n-1, nuevo_origen, nuevo_final)
+    }
 }
-
-
-
-let contenedor = document.querySelector("#resultado")
-resultado.innerHTML= hanoi(N,origen,destino)
+if(destino==origen)
+{
+    console.log("Ya está resuelto")
+    resultado="Ya está resuelto"
+}else{
+hanoi(n,origen,destino)
+console.log(respuesta)
+resultado= "El resultado es " + resultado
+}
+let contenedor = document.querySelector("#contenedor")
+contenedor.innerHTML = resultado
