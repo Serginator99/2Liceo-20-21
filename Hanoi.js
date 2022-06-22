@@ -47,7 +47,7 @@ if(destino==origen)
     resultado="Ya está resuelto"
 }else{
 hanoi(n,origen,destino)
-console.log(respuesta)
+console.log(resultado)
 resultado= "El resultado es " + resultado
 }
 let contenedor = document.querySelector("#contenedor")
